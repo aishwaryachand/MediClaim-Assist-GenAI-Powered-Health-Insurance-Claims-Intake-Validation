@@ -35,27 +35,8 @@ Using a synthetic claims benchmark and rule-based ground truth, MediClaim AI dem
 ---
 ##  System Architecture 
 
-┌────────────────────────┐      ┌────────────────────────┐      ┌────────────────────────┐
-│     Input Layer        │  →   │  Application Layer     │  →   │ Document Intelligence  │
-│                        │      │                        │      │                        │
-│ • Claims Portal / API  │      │ • FastAPI Ingestion    │      │ • OCR                  │
-│ • Claim PDFs           │      │ • Validation           │      │ • Field Extraction     │
-└────────────────────────┘      └────────────────────────┘      └────────────────────────┘
-                                                                               ↓
-┌────────────────────────┐      ┌────────────────────────┐      ┌────────────────────────┐
-│  Human Review Layer    │  ←   │  AI Reasoning Layer    │  ←   │ Policy Knowledge       │
-│                        │      │                        │      │                        │
-│ • Reviewer UI          │      │ • RAG + LLM Engine     │      │ • Policy Docs          │
-│ • Approve / Escalate   │      │ • Confidence Scoring   │      │ • Vector DB            │
-└────────────────────────┘      └────────────────────────┘      └────────────────────────┘
-           ↓ 
-┌────────────────────────┐      ┌────────────────────────┐
-│       Data Layer       │      │   Audit & Governance   │
-│                        │      │                        │
-│ • Claim Metadata       │  →   │ • Decision Trace       │
-│ • AI Outputs           │      │ • Prompt Versions      │
-│ • Human Decisions      │      │ • Model Versions       │
-└────────────────────────┘      └────────────────────────┘
+![system](https://github.com/aishwaryachand/MediClaim-Assist-GenAI-Powered-Health-Insurance-Claims-Intake-Validation/blob/main/mocks/architecture.jpeg)
+
 
 
 ##  Solution Overview
