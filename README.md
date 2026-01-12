@@ -33,6 +33,30 @@ Using a synthetic claims benchmark and rule-based ground truth, MediClaim AI dem
 > Note: Metrics are based on a controlled synthetic dataset designed to simulate real-world health insurance claim workflows.
 
 ---
+##  System Architecture 
+
+┌────────────────────────┐      ┌────────────────────────┐      ┌────────────────────────┐
+│     Input Layer        │  →   │  Application Layer     │  →   │ Document Intelligence  │
+│                        │      │                        │      │                        │
+│ • Claims Portal / API  │      │ • FastAPI Ingestion    │      │ • OCR                  │
+│ • Claim PDFs           │      │ • Validation           │      │ • Field Extraction     │
+└────────────────────────┘      └────────────────────────┘      └────────────────────────┘
+                                                                               ↓
+┌────────────────────────┐      ┌────────────────────────┐      ┌────────────────────────┐
+│  Human Review Layer    │  ←   │  AI Reasoning Layer    │  ←   │ Policy Knowledge       │
+│                        │      │                        │      │                        │
+│ • Reviewer UI          │      │ • RAG + LLM Engine     │      │ • Policy Docs          │
+│ • Approve / Escalate   │      │ • Confidence Scoring   │      │ • Vector DB            │
+└────────────────────────┘      └────────────────────────┘      └────────────────────────┘
+           ↓ 
+┌────────────────────────┐      ┌────────────────────────┐
+│       Data Layer       │      │   Audit & Governance   │
+│                        │      │                        │
+│ • Claim Metadata       │  →   │ • Decision Trace       │
+│ • AI Outputs           │      │ • Prompt Versions      │
+│ • Human Decisions      │      │ • Model Versions       │
+└────────────────────────┘      └────────────────────────┘
+
 
 ##  Solution Overview
 
