@@ -1,5 +1,5 @@
 # MediClaim Assist
-##GenAI-Powered-Health-Insurance-Claims-Intake-Validation
+## GenAI-Powered-Health-Insurance-Claims-Intake-Validation
 
 **Accelerating health insurance claim reviews through AI-assisted document intelligence, policy-grounded reasoning, and human-in-the-loop governance.**
 
